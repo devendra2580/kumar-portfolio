@@ -1,5 +1,5 @@
 import React from 'react';
-import infologitechLogo from '../../assets/infologitech.png';
+import infologitechLogo from '../../assets/Infologitech.png';
 
 const ExperienceSection = ({ setActiveTab }) => {
   const experiences = [
