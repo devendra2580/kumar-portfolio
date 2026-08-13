@@ -87,11 +87,11 @@ const AboutSection = ({ setActiveTab }) => {
       </div>
 
       {/* Main Section Header */}
-      <div className="space-y-2 relative z-10">
+      <div className="space-y-2 relative z-10 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
           About Me
         </h1>
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto lg:mx-0"></div>
       </div>
 
       {/* Main Content Layout */}
@@ -101,7 +101,7 @@ const AboutSection = ({ setActiveTab }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
           
           {/* Left Side: Bio Paragraphs */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="lg:col-span-7 space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <p className="text-blue-600 dark:text-blue-400 font-semibold text-base sm:text-lg tracking-wide">
               AI Developer | Python Developer | Automation Enthusiast
             </p>
@@ -116,27 +116,27 @@ const AboutSection = ({ setActiveTab }) => {
           </div>
 
           {/* Right Side: Shifted Upward Orbit Profile Photo Container */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-start lg:-mt-24">
+          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 lg:-mt-24">
             
             <div className="relative group flex items-center justify-center cursor-pointer animate-float-hero">
               
               {/* Outer Orbit Rings */}
-              <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full border-2 border-dashed border-blue-400/60 dark:border-blue-500/50 animate-spin-cw"></div>
-              <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 border-dotted border-cyan-400/70 dark:border-cyan-400/60 animate-spin-ccw"></div>
+              <div className="absolute w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-2 border-dashed border-blue-400/60 dark:border-blue-500/50 animate-spin-cw"></div>
+              <div className="absolute w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full border-2 border-dotted border-cyan-400/70 dark:border-cyan-400/60 animate-spin-ccw"></div>
 
               {/* Rotating Tech Particles */}
-              <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full animate-spin-cw pointer-events-none">
+              <div className="absolute w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full animate-spin-cw pointer-events-none">
                 <div className="w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.9)] absolute top-0 left-1/2 -translate-x-1/2"></div>
               </div>
-              <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full animate-spin-ccw pointer-events-none">
+              <div className="absolute w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full animate-spin-ccw pointer-events-none">
                 <div className="w-3.5 h-3.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)] absolute bottom-0 left-1/2 -translate-x-1/2"></div>
               </div>
 
               {/* Breathing Halo Aura */}
-              <div className="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
               {/* Avatar Container */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
                 <img
                   src={profileImg}
                   alt="Darapureddy Devendra Kumar"
@@ -166,7 +166,7 @@ const AboutSection = ({ setActiveTab }) => {
         {/* Quick Info Metric Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full">
           
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -178,7 +178,7 @@ const AboutSection = ({ setActiveTab }) => {
             </div>
           </div>
 
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-indigo-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-indigo-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
@@ -191,7 +191,7 @@ const AboutSection = ({ setActiveTab }) => {
             </div>
           </div>
 
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-cyan-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-cyan-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-500 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -204,7 +204,7 @@ const AboutSection = ({ setActiveTab }) => {
             </div>
           </div>
 
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-amber-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-amber-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-400 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
@@ -220,7 +220,7 @@ const AboutSection = ({ setActiveTab }) => {
 
         {/* What I Do Section */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white">What I Do</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center lg:text-left">What I Do</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
@@ -274,9 +274,9 @@ const AboutSection = ({ setActiveTab }) => {
 
         {/* High-Contrast Single-Line Tech Stack Row */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white">Tech Stack I Work With</h2>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center lg:text-left">Tech Stack I Work With</h2>
 
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3">
+          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-3">
             {techStack.map((tech, index) => (
               <div
                 key={index}
