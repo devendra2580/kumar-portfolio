@@ -2,16 +2,16 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 py-4 sm:py-5 mt-8 transition-colors duration-300">
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 relative flex flex-col sm:flex-row items-center justify-between gap-3 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+    <footer className="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 sm:py-5 mt-8 transition-colors duration-300">
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-3 text-xs sm:text-base text-gray-600 dark:text-gray-300">
         
         {/* Left: Copyright */}
-        <div className="font-semibold">
-          © 2025 Devendra Kumar. All rights reserved.
+        <div className="font-semibold text-center sm:text-left order-2 sm:order-1">
+          © 2026 Devendra Kumar. All rights reserved.
         </div>
 
-        {/* Center: Let's Connect & Social Icons (Increased Size) */}
-        <div className="sm:absolute sm:left-1/2 sm:-translate-x-1/2 flex items-center justify-center space-x-4">
+        {/* Center: Let's Connect & Social Icons */}
+        <div className="sm:absolute sm:left-1/2 sm:-translate-x-1/2 flex items-center justify-center space-x-4 order-1 sm:order-2">
           <span className="font-bold text-gray-800 dark:text-white">Let's connect:</span>
           
           {/* LinkedIn Icon */}
@@ -42,7 +42,7 @@ const Footer = () => {
 
           {/* Mail Icon */}
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=devendrakumar.darapureddy@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=darapureddydevendra13579@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-transform hover:scale-110 cursor-pointer"
