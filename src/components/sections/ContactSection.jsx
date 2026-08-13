@@ -83,7 +83,7 @@ const ContactSection = ({ setActiveTab }) => {
   ];
 
   return (
-    <section id="contact" className="py-6 space-y-10 relative overflow-visible px-2 sm:px-4">
+    <section id="contact" className="py-6 space-y-8 relative overflow-visible px-2 sm:px-4">
       {/* Ambient Spotlights */}
       <div className="absolute top-10 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
       <div className="absolute top-40 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none animate-pulse delay-1000"></div>
@@ -101,8 +101,8 @@ const ContactSection = ({ setActiveTab }) => {
       </div>
 
       {/* Top Header */}
-      <div className="space-y-2 relative z-10">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider">
+      <div className="space-y-3 relative z-10 text-center lg:text-left">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mx-auto lg:mx-0">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
@@ -113,18 +113,18 @@ const ContactSection = ({ setActiveTab }) => {
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
           Let’s Connect & Collaborate
         </h1>
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
-        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed">
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto lg:mx-0"></div>
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed mx-auto lg:mx-0">
           Whether you have a job opportunity, a project proposal, or just want to say hello, feel free to drop me a message. I am actively looking for AI & Python Developer roles.
         </p>
       </div>
 
       {/* Main Layout Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 relative z-10 items-start mt-4">
         
         {/* Left Column: Contact Cards */}
         <div className="lg:col-span-5 space-y-4">
-          <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white pb-1">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white pb-1 text-center lg:text-left">
             Contact Information
           </h2>
 
@@ -233,11 +233,11 @@ const ContactSection = ({ setActiveTab }) => {
         </div>
 
         {/* Right Column: Direct In-Page Form with overflow-hidden added */}
-        <div className="lg:col-span-7 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_30px_rgba(0,0,0,0.04)] relative overflow-hidden">
+        <div className="lg:col-span-7 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_30px_rgba(0,0,0,0.04)] relative overflow-hidden mt-8 lg:mt-0">
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500"></div>
 
           <div className="space-y-6">
-            <div className="space-y-1">
+            <div className="space-y-1 text-center sm:text-left">
               <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                 Send a Direct Message
               </h2>
@@ -338,8 +338,8 @@ const ContactSection = ({ setActiveTab }) => {
 
       {/* Choose Email Provider Modal */}
       {showEmailModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-md">
-          <div className="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-6 space-y-5">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-md">
+          <div className="relative w-full max-w-[95%] sm:max-w-md bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-5 sm:p-6 space-y-5">
             
             <button
               onClick={() => setShowEmailModal(false)}
@@ -348,8 +348,8 @@ const ContactSection = ({ setActiveTab }) => {
               ✕
             </button>
 
-            <div className="space-y-1">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+            <div className="space-y-1 pr-6">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
                 Choose Webmail Provider
               </h3>
               <p className="text-xs text-gray-500 dark:text-gray-400 font-normal">
@@ -369,10 +369,10 @@ const ContactSection = ({ setActiveTab }) => {
                 >
                   <span className="text-2xl group-hover:scale-110 transition-transform">{prov.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-xs font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {prov.name}
                     </h4>
-                    <p className="text-[11px] text-gray-500 dark:text-gray-400 font-normal truncate">
+                    <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-normal truncate">
                       {prov.desc}
                     </p>
                   </div>
@@ -381,8 +381,8 @@ const ContactSection = ({ setActiveTab }) => {
               ))}
             </div>
 
-            <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span className="text-xs text-gray-500 dark:text-gray-400 font-medium truncate pr-2">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+              <span className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 font-medium truncate pr-2">
                 {emailAddress}
               </span>
               <button
