@@ -10,10 +10,10 @@ const HeroSection = () => {
       <div className="absolute top-40 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Top Main Section: Headline, Profile & Contact Info */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
         
         {/* Left Column: Headline, Bio & Action Buttons */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
           
           {/* Greeting Pill Badge with Pulsing Green Dot */}
           <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-blue-200/80 dark:border-slate-700/80 shadow-xs text-blue-600 dark:text-blue-400 text-xs font-bold tracking-wide transform hover:scale-105 transition-transform cursor-pointer">
@@ -27,7 +27,7 @@ const HeroSection = () => {
           {/* Main Title */}
           <div className="space-y-2">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight leading-[1.1]">
-              Darapureddy <br />
+              Darapureddy <br className="hidden sm:block" />
               <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 bg-clip-text text-transparent">
                 Devendra Kumar
               </span>
@@ -43,7 +43,7 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
             <a
               href="#projects"
               className="relative group overflow-hidden inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white font-bold text-sm rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
@@ -68,10 +68,10 @@ const HeroSection = () => {
           </div>
 
           {/* Top Metric Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-4 w-full max-w-2xl">
             
             {/* Metric 1 */}
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
               <div className="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -84,7 +84,7 @@ const HeroSection = () => {
             </div>
 
             {/* Metric 2 */}
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-indigo-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-indigo-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
               <div className="w-8 h-8 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold text-xs flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -97,7 +97,7 @@ const HeroSection = () => {
             </div>
 
             {/* Metric 3 */}
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-cyan-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-cyan-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
               <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xs flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 01-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -110,7 +110,7 @@ const HeroSection = () => {
             </div>
 
             {/* Metric 4 */}
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-amber-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-amber-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
               <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs flex-shrink-0 group-hover:scale-110 transition-transform">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -126,28 +126,28 @@ const HeroSection = () => {
         </div>
 
         {/* Right Column: Profile Visual & Clean Contact List */}
-        <div className="lg:col-span-5 flex flex-col items-center justify-center">
+        <div className="lg:col-span-5 flex flex-col items-center justify-center mt-8 lg:mt-0">
           
           {/* Animated Float Container */}
           <div className="relative group my-4 flex items-center justify-center cursor-pointer animate-float-hero">
             
             {/* Outer Orbit Rings */}
-            <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full border-2 border-dashed border-blue-400/60 dark:border-blue-500/50 animate-spin-cw"></div>
-            <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full border-2 border-dotted border-cyan-400/70 dark:border-cyan-400/60 animate-spin-ccw"></div>
+            <div className="absolute w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-2 border-dashed border-blue-400/60 dark:border-blue-500/50 animate-spin-cw"></div>
+            <div className="absolute w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full border-2 border-dotted border-cyan-400/70 dark:border-cyan-400/60 animate-spin-ccw"></div>
 
             {/* Rotating Tech Particles */}
-            <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full animate-spin-cw pointer-events-none">
+            <div className="absolute w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full animate-spin-cw pointer-events-none">
               <div className="w-4 h-4 rounded-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.9)] absolute top-0 left-1/2 -translate-x-1/2"></div>
             </div>
-            <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full animate-spin-ccw pointer-events-none">
+            <div className="absolute w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full animate-spin-ccw pointer-events-none">
               <div className="w-3.5 h-3.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)] absolute bottom-0 left-1/2 -translate-x-1/2"></div>
             </div>
 
             {/* Breathing Multi-Color Gradient Halo */}
-            <div className="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
+            <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
             {/* Main Avatar Container */}
-            <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
               <img
                 src={profileImg}
                 alt="Darapureddy Devendra Kumar"
@@ -172,9 +172,9 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Clean Contact Info List (Without Outer Card Box) */}
-          <div className="w-full max-w-xs space-y-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-6 font-medium">
-            <div className="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
+          {/* Clean Contact Info List */}
+          <div className="w-full max-w-xs space-y-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mt-8 font-medium">
+            <div className="flex items-center justify-center lg:justify-start space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
               <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-2xs group-hover/item:scale-110 transition-transform">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -183,7 +183,7 @@ const HeroSection = () => {
               <span>+91 8341695598</span>
             </div>
 
-            <div className="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
+            <div className="flex items-center justify-center lg:justify-start space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
               <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-2xs group-hover/item:scale-110 transition-transform">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -192,7 +192,7 @@ const HeroSection = () => {
               <span className="truncate">darapureddydevendra13579@gmail.com</span>
             </div>
 
-            <div className="flex items-center space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
+            <div className="flex items-center justify-center lg:justify-start space-x-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/item">
               <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-2xs group-hover/item:scale-110 transition-transform">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -202,7 +202,7 @@ const HeroSection = () => {
               <span>Hyderabad, India</span>
             </div>
 
-            <div className="flex items-center space-x-3 group/item">
+            <div className="flex items-center justify-center lg:justify-start space-x-3 group/item">
               <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center shadow-2xs group-hover/item:scale-110 transition-transform">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -224,7 +224,7 @@ const HeroSection = () => {
       </div>
 
       {/* Navigation Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 relative z-10">
         
         {/* About Card */}
         <div className="group relative bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-6 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:-translate-y-2 hover:shadow-2xl hover:border-blue-400/50 transition-all duration-300 overflow-hidden">
