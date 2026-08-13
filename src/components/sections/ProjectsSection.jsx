@@ -191,18 +191,18 @@ const ProjectsSection = ({ setActiveTab }) => {
       </div>
 
       {/* Header with Gradient Accent Line */}
-      <div className="space-y-2 relative z-10">
+      <div className="space-y-2 relative z-10 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
           My Projects
         </h1>
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
-        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pt-1 font-normal">
+        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto lg:mx-0"></div>
+        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 pt-1 font-normal max-w-2xl mx-auto lg:mx-0">
           A collection of real-world projects that showcase my skills in AI, automation, backend development, and cloud technologies.
         </p>
       </div>
 
-      {/* Filter Category Pills with Inset Padding */}
-      <div className="flex flex-wrap items-center gap-2.5 relative z-10 py-1 pl-1">
+      {/* Filter Category Pills */}
+      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 relative z-10 py-1 pl-1">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -224,7 +224,7 @@ const ProjectsSection = ({ setActiveTab }) => {
           <div
             key={project.id}
             onClick={() => setSelectedProject(project)}
-            className="group relative overflow-hidden bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:-translate-y-2 hover:shadow-2xl hover:border-blue-400/50 transition-all duration-500 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center cursor-pointer"
+            className="group relative overflow-hidden bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-5 sm:p-6 lg:p-8 rounded-3xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:-translate-y-2 hover:shadow-2xl hover:border-blue-400/50 transition-all duration-500 flex flex-col lg:grid lg:grid-cols-12 gap-6 items-center cursor-pointer"
           >
             {/* Mid-Lighter Hover Shimmer Reflection Pass */}
             <div className="absolute inset-0 w-2/3 h-full bg-gradient-to-r from-transparent via-white/40 dark:via-white/20 to-transparent skew-x-12 -translate-x-full opacity-0 group-hover:opacity-100 group-hover:translate-x-[250%] transition-all duration-1000 ease-out pointer-events-none"></div>
@@ -233,7 +233,7 @@ const ProjectsSection = ({ setActiveTab }) => {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             {/* Image Container with Hover Pill Overlay Triggered on Card Hover */}
-            <div className="lg:col-span-4 relative overflow-hidden rounded-2xl h-52 sm:h-60 w-full border border-slate-200/60 dark:border-slate-700/60 shadow-xs bg-slate-100 dark:bg-slate-900">
+            <div className="lg:col-span-4 relative overflow-hidden rounded-2xl h-48 sm:h-52 lg:h-60 w-full border border-slate-200/60 dark:border-slate-700/60 shadow-xs bg-slate-100 dark:bg-slate-900">
               <img
                 src={project.image}
                 alt={project.title}
@@ -250,7 +250,7 @@ const ProjectsSection = ({ setActiveTab }) => {
 
               {/* Hover Pill Button Overlay - Shows when hovering ANYWHERE on the card */}
               <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <div className="bg-blue-600 text-white font-bold text-xs px-4 py-2.5 rounded-2xl shadow-lg shadow-blue-600/40 flex items-center space-x-2 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <div className="bg-blue-600 text-white font-bold text-xs px-4 py-2.5 rounded-2xl shadow-lg shadow-blue-600/40 flex items-center space-x-2 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 mx-auto lg:mx-0">
                   <span>Explore Details</span>
                   <span className="text-sm">➔</span>
                 </div>
@@ -258,7 +258,7 @@ const ProjectsSection = ({ setActiveTab }) => {
             </div>
 
             {/* Project Information */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 w-full space-y-4">
               <div className="flex flex-wrap items-center gap-2.5">
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white leading-snug">
                   {project.title}
@@ -288,7 +288,7 @@ const ProjectsSection = ({ setActiveTab }) => {
             </div>
 
             {/* Tech Stack Column */}
-            <div className="lg:col-span-3 border-t lg:border-t-0 lg:border-l border-slate-100 dark:border-slate-700/80 pt-4 lg:pt-0 lg:pl-6 space-y-3">
+            <div className="lg:col-span-3 w-full border-t lg:border-t-0 lg:border-l border-slate-100 dark:border-slate-700/80 pt-4 mt-2 lg:mt-0 lg:pt-0 lg:pl-6 space-y-3">
               <h4 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider flex items-center space-x-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
                 <span>Tech Stack</span>
@@ -310,35 +310,35 @@ const ProjectsSection = ({ setActiveTab }) => {
 
       {/* Recruiter-Ready Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-6 sm:p-8 space-y-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-md">
+          <div className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-5 sm:p-8 space-y-5 sm:space-y-6">
             
             {/* Close Modal Button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-bold text-base cursor-pointer"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-bold text-base cursor-pointer z-10"
             >
               ✕
             </button>
 
             {/* Modal Title & Category */}
-            <div className="space-y-2 pr-8">
-              <div className="flex items-center space-x-3">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+            <div className="space-y-2 pr-10">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <h2 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
                   {selectedProject.title}
                 </h2>
-                <span className="bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-100 dark:border-slate-700">
+                <span className="bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 text-[10px] sm:text-xs font-semibold px-2.5 sm:px-3 py-1 rounded-full border border-blue-100 dark:border-slate-700">
                   {selectedProject.tag}
                 </span>
               </div>
-              <div className="inline-flex items-center space-x-2 text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-slate-800/80 px-3 py-1 rounded-lg">
+              <div className="inline-flex items-center space-x-2 text-[10px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-slate-800/80 px-2.5 sm:px-3 py-1 rounded-lg">
                 <span>STATUS:</span>
                 <span>{selectedProject.details.projectStatus}</span>
               </div>
             </div>
 
             {/* Image Preview */}
-            <div className="w-full h-52 sm:h-60 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-100 dark:bg-slate-800">
+            <div className="w-full h-40 sm:h-52 lg:h-60 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-100 dark:bg-slate-800">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -348,7 +348,7 @@ const ProjectsSection = ({ setActiveTab }) => {
 
             {/* Problem Statement */}
             <div className="space-y-1.5">
-              <h3 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 📌 Problem Statement & Objective
               </h3>
               <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-normal">
@@ -358,20 +358,20 @@ const ProjectsSection = ({ setActiveTab }) => {
 
             {/* System Architecture */}
             <div className="space-y-1.5">
-              <h3 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 🏗️ System Architecture
               </h3>
-              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white bg-slate-50 dark:bg-slate-800/80 p-3 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+              <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white bg-slate-50 dark:bg-slate-800/80 p-3 rounded-xl border border-slate-200/60 dark:border-slate-700/60 leading-relaxed">
                 {selectedProject.details.architectureHighlights}
               </p>
             </div>
 
             {/* Key Accomplishments */}
             <div className="space-y-2">
-              <h3 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 ⚡ Key Engineering Accomplishments
               </h3>
-              <ul className="space-y-2 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-normal">
+              <ul className="space-y-2.5 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-normal">
                 {selectedProject.details.keyFeatures.map((feat, idx) => (
                   <li key={idx} className="flex items-start space-x-2.5">
                     <span className="text-blue-600 dark:text-blue-400 font-bold mt-0.5">✓</span>
@@ -383,12 +383,12 @@ const ProjectsSection = ({ setActiveTab }) => {
 
             {/* Tech Stack Badges */}
             <div className="space-y-2">
-              <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                 🛠️ Technologies & Libraries
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {selectedProject.techStack.map((tech, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 text-gray-800 dark:text-gray-200">
+                  <span key={idx} className="px-2.5 sm:px-3 py-1 bg-slate-100 dark:bg-slate-800 text-[10px] sm:text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 text-gray-800 dark:text-gray-200">
                     #{tech}
                   </span>
                 ))}
@@ -399,7 +399,7 @@ const ProjectsSection = ({ setActiveTab }) => {
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-end">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md transition-all cursor-pointer"
+                className="px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold shadow-md transition-all cursor-pointer w-full sm:w-auto text-center"
               >
                 Close Preview
               </button>
