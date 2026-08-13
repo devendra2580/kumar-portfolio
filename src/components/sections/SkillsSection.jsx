@@ -10,7 +10,7 @@ const SkillsSection = ({ setActiveTab }) => {
   const stats = [
     {
       icon: (
-        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
@@ -19,7 +19,7 @@ const SkillsSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.052 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         </svg>
@@ -29,7 +29,7 @@ const SkillsSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 01-2 2h-disabled" />
         </svg>
       ),
@@ -38,7 +38,7 @@ const SkillsSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -195,23 +195,23 @@ const SkillsSection = ({ setActiveTab }) => {
       </div>
 
       {/* Top Header & Interactive Stats Dashboard */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start relative z-10">
         
         {/* Title & Subtitle */}
-        <div className="lg:col-span-7 space-y-2">
+        <div className="lg:col-span-7 space-y-2 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
             My Skills
           </h1>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed">
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto lg:mx-0"></div>
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed mx-auto lg:mx-0">
             A blend of programming, AI, automation, and cloud technologies that I use to build intelligent and scalable real-world solutions.
           </p>
         </div>
 
         {/* Top Right Animated Dashboard */}
-        <div className="lg:col-span-5 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-blue-300 dark:hover:border-slate-600 transition-all duration-500 grid grid-cols-4 gap-2 text-center">
+        <div className="lg:col-span-5 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-blue-300 dark:hover:border-slate-600 transition-all duration-500 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-2 text-center mt-4 lg:mt-0">
           {stats.map((stat, i) => (
-            <div key={i} className="group/stat space-y-1 border-r last:border-0 border-slate-100 dark:border-slate-700/60 px-1 cursor-default">
+            <div key={i} className="group/stat space-y-1.5 px-1 cursor-default">
               <div className="flex justify-center transform group-hover/stat:scale-125 group-hover/stat:rotate-6 transition-transform duration-300">
                 {stat.icon}
               </div>
@@ -228,7 +228,7 @@ const SkillsSection = ({ setActiveTab }) => {
       </div>
 
       {/* Section Sub-Header */}
-      <div className="pt-2 relative z-10">
+      <div className="pt-2 relative z-10 text-center lg:text-left">
         <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
           Technical Skills
         </h2>
