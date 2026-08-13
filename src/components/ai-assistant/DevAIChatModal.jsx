@@ -211,24 +211,23 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
   return (
     <div
       id="ai-chat-modal"
-      className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-96 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden flex flex-col h-[480px] animate-in fade-in slide-in-from-bottom-5 duration-300"
+      className="fixed z-50 overflow-hidden flex flex-col bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-300 bottom-20 right-4 left-4 h-[65vh] max-h-[500px] sm:bottom-24 sm:right-6 sm:left-auto sm:w-[380px] sm:h-[520px]"
     >
       {/* ==================================================
           HEADER
       ================================================== */}
 
-      <div className="p-3.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white flex items-center justify-between shadow-md">
-        <div className="flex items-center space-x-2.5">
-          <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center font-bold text-xs shadow-xs">
+      <div className="p-3.5 sm:p-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white flex items-center justify-between shadow-md shrink-0">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center font-bold text-sm shadow-xs">
             ⚡
           </div>
 
           <div>
-            <h3 className="text-xs font-bold leading-tight">
+            <h3 className="text-sm font-bold leading-tight">
               Dev AI Assistant
             </h3>
-
-            <p className="text-[9px] text-blue-100 opacity-90">
+            <p className="text-[10px] text-blue-100 opacity-90">
               Powered by Groq • Llama 3.1
             </p>
           </div>
@@ -236,7 +235,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
 
         <button
           onClick={onClose}
-          className="w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center font-bold text-xs cursor-pointer"
+          className="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center font-bold text-xs cursor-pointer"
           aria-label="Close AI assistant"
         >
           ✕
@@ -247,7 +246,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
           MESSAGE AREA
       ================================================== */}
 
-      <div className="flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-50 dark:bg-slate-900/60">
+      <div className="flex-1 p-3.5 sm:p-4 overflow-y-auto space-y-3 bg-slate-50 dark:bg-slate-900/60">
         {messages.map((message, index) => (
           <div
             key={index}
@@ -258,10 +257,10 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
             }`}
           >
             <div
-              className={`max-w-[88%] px-3.5 py-2.5 rounded-2xl text-xs leading-relaxed ${
+              className={`max-w-[88%] px-3.5 py-2.5 rounded-2xl text-[13px] leading-relaxed break-words ${
                 message.sender === "user"
                   ? "bg-blue-600 text-white rounded-br-none shadow-xs"
-                  : "bg-white dark:bg-slate-800 text-gray-800 dark:text-gray-200 border border-slate-200/80 dark:border-slate-700/80 rounded-bl-none shadow-xs prose prose-xs dark:prose-invert max-w-none"
+                  : "bg-white dark:bg-slate-800 text-gray-800 dark:text-gray-200 border border-slate-200/80 dark:border-slate-700/80 rounded-bl-none shadow-xs prose prose-sm dark:prose-invert max-w-none"
               }`}
             >
               {message.sender === "user" ? (
@@ -318,12 +317,9 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
 
         {isTyping && (
           <div className="flex justify-start">
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3.5 py-2 rounded-2xl text-xs text-gray-500 dark:text-gray-400 flex items-center space-x-1.5">
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3.5 py-2.5 rounded-2xl text-[13px] text-gray-500 dark:text-gray-400 flex items-center space-x-2">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span>
-
-              <span>
-                Dev AI is thinking...
-              </span>
+              <span>Dev AI is thinking...</span>
             </div>
           </div>
         )}
@@ -337,7 +333,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
 
       <form
         onSubmit={handleSend}
-        className="p-2.5 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center space-x-2"
+        className="p-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center space-x-2 shrink-0 pb-safe"
       >
         <input
           type="text"
@@ -347,7 +343,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
             setInput(event.target.value)
           }
           disabled={isTyping}
-          className="flex-1 px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
+          className="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[13px] text-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
         />
 
         <button
@@ -355,7 +351,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
           disabled={
             isTyping || !input.trim()
           }
-          className="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-all cursor-pointer disabled:opacity-50"
+          className="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-[13px] font-semibold transition-all cursor-pointer disabled:opacity-50"
         >
           Send
         </button>
