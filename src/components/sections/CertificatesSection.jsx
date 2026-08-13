@@ -24,7 +24,7 @@ const CertificatesSection = ({ setActiveTab }) => {
   const stats = [
     {
       icon: (
-        <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       ),
@@ -33,7 +33,7 @@ const CertificatesSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
       ),
@@ -42,7 +42,7 @@ const CertificatesSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600 dark:text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -51,7 +51,7 @@ const CertificatesSection = ({ setActiveTab }) => {
     },
     {
       icon: (
-        <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -139,23 +139,23 @@ const CertificatesSection = ({ setActiveTab }) => {
       </div>
 
       {/* Top Header & Dashboard Box */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start relative z-10">
         
         {/* Title & Subtitle */}
-        <div className="lg:col-span-7 space-y-2">
+        <div className="lg:col-span-7 space-y-2 text-center lg:text-left">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
             Certifications & Accomplishments
           </h1>
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
-          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed">
+          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mx-auto lg:mx-0"></div>
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-normal pt-1 max-w-xl leading-relaxed mx-auto lg:mx-0">
             A verified collection of professional certifications, technical workshops, and hackathons that validate my expertise.
           </p>
         </div>
 
         {/* Top Right Stats Box */}
-        <div className="lg:col-span-5 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-blue-300 dark:hover:border-slate-600 transition-all duration-500 grid grid-cols-4 gap-2 text-center">
+        <div className="lg:col-span-5 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-blue-300 dark:hover:border-slate-600 transition-all duration-500 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-2 text-center mt-6 lg:mt-0">
           {stats.map((stat, i) => (
-            <div key={i} className="group/stat space-y-1 border-r last:border-0 border-slate-100 dark:border-slate-700/60 px-1 cursor-default">
+            <div key={i} className="group/stat space-y-1.5 px-1 cursor-default">
               <div className="flex justify-center transform group-hover/stat:scale-125 group-hover/stat:rotate-6 transition-transform duration-300">
                 {stat.icon}
               </div>
@@ -172,7 +172,7 @@ const CertificatesSection = ({ setActiveTab }) => {
       </div>
 
       {/* Section Sub-Header */}
-      <div className="pt-2 relative z-10">
+      <div className="pt-2 relative z-10 text-center lg:text-left">
         <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
           Verified Qualifications
         </h2>
@@ -196,7 +196,7 @@ const CertificatesSection = ({ setActiveTab }) => {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             {/* Card Header Row */}
-            <div className="flex items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-700/60 pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-700/60 pb-3">
               <div className="flex items-center space-x-3">
                 <div className={`w-10 h-10 rounded-xl border flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-xs ${cert.iconBg}`}>
                   <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,16 +204,16 @@ const CertificatesSection = ({ setActiveTab }) => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">
                     {cert.title}
                   </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                  <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mt-0.5">
                     {cert.issuer} • <span className="text-blue-600 dark:text-blue-400 font-semibold">{cert.date}</span>
                   </p>
                 </div>
               </div>
 
-              <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded border transition-all duration-200 ${cert.badgeStyle}`}>
+              <span className={`self-start text-[10px] font-medium px-2.5 py-0.5 rounded border transition-all duration-200 mt-2 sm:mt-0 ${cert.badgeStyle}`}>
                 {cert.category}
               </span>
             </div>
@@ -228,7 +228,7 @@ const CertificatesSection = ({ setActiveTab }) => {
               {cert.skills.map((skill, sIdx) => (
                 <span
                   key={sIdx}
-                  className="bg-slate-100/90 dark:bg-slate-700/70 text-gray-800 dark:text-gray-200 text-[11px] font-medium px-2.5 py-1 rounded-xl border border-slate-200/60 dark:border-slate-600/60 group-hover:border-blue-300 dark:group-hover:border-blue-500/50 transition-colors duration-200"
+                  className="bg-slate-100/90 dark:bg-slate-700/70 text-gray-800 dark:text-gray-200 text-[10px] sm:text-[11px] font-medium px-2.5 py-1 rounded-xl border border-slate-200/60 dark:border-slate-600/60 group-hover:border-blue-300 dark:group-hover:border-blue-500/50 transition-colors duration-200"
                 >
                   #{skill}
                 </span>
@@ -236,7 +236,7 @@ const CertificatesSection = ({ setActiveTab }) => {
             </div>
 
             {/* Bottom Preview Callout */}
-            <div className="flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400 pt-1 group-hover:translate-x-1 transition-transform">
+            <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold text-blue-600 dark:text-blue-400 pt-1 group-hover:translate-x-1 transition-transform">
               <span>Click to view credential details & download PDF</span>
               <span>➔</span>
             </div>
@@ -247,32 +247,32 @@ const CertificatesSection = ({ setActiveTab }) => {
 
       {/* Interactive Modal Preview with Certificate View & PDF Download */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-md">
-          <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-6 sm:p-8 space-y-5">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-md">
+          <div className="relative w-full max-w-xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl p-5 sm:p-8 space-y-5">
             
             {/* Close Modal Button */}
             <button
               onClick={() => setSelectedCert(null)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-bold text-base cursor-pointer"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 hover:bg-red-500 hover:text-white transition-colors flex items-center justify-center font-bold text-base cursor-pointer z-10"
             >
               ✕
             </button>
 
             {/* Modal Title */}
-            <div className="space-y-1 pr-8">
-              <span className={`text-[10px] font-medium px-2.5 py-0.5 rounded border inline-block mb-1 ${selectedCert.badgeStyle}`}>
+            <div className="space-y-1.5 pr-8 sm:pr-10">
+              <span className={`text-[10px] sm:text-xs font-medium px-2.5 py-0.5 rounded border inline-block mb-1 ${selectedCert.badgeStyle}`}>
                 {selectedCert.category}
               </span>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
                 {selectedCert.title}
               </h2>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+              <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400 font-medium mt-1">
                 Issued by <strong className="text-gray-800 dark:text-gray-200">{selectedCert.issuer}</strong> ({selectedCert.date})
               </p>
             </div>
 
             {/* Certificate Document Display */}
-            <div className="relative group/preview w-full h-52 sm:h-64 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-inner bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+            <div className="relative group/preview w-full h-48 sm:h-64 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-inner bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
               <img
                 src={selectedCert.image}
                 alt={selectedCert.title}
@@ -292,7 +292,7 @@ const CertificatesSection = ({ setActiveTab }) => {
                 <a
                   href={selectedCert.pdfUrl}
                   download
-                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-lg flex items-center space-x-2 transition-transform transform hover:scale-105"
+                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-[11px] sm:text-xs shadow-lg flex items-center space-x-2 transition-transform transform hover:scale-105"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -304,7 +304,7 @@ const CertificatesSection = ({ setActiveTab }) => {
 
             {/* Overview */}
             <div className="space-y-1.5">
-              <h3 className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                 📜 Certification Overview
               </h3>
               <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-normal">
@@ -314,12 +314,12 @@ const CertificatesSection = ({ setActiveTab }) => {
 
             {/* Skills Validated */}
             <div className="space-y-2">
-              <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
+              <h3 className="text-[11px] sm:text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                 🛠️ Skills & Knowledge Areas
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {selectedCert.skills.map((skill, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 text-gray-800 dark:text-gray-200">
+                  <span key={idx} className="px-2.5 sm:px-3 py-1 bg-slate-100 dark:bg-slate-800 text-[10px] sm:text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 text-gray-800 dark:text-gray-200">
                     #{skill}
                   </span>
                 ))}
@@ -327,11 +327,11 @@ const CertificatesSection = ({ setActiveTab }) => {
             </div>
 
             {/* Modal Action Footer */}
-            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
               <a
                 href={selectedCert.pdfUrl}
                 download
-                className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-md transition-all flex items-center space-x-2 cursor-pointer"
+                className="w-full sm:w-auto justify-center px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold shadow-md transition-all flex items-center space-x-2 cursor-pointer"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -341,7 +341,7 @@ const CertificatesSection = ({ setActiveTab }) => {
 
               <button
                 onClick={() => setSelectedCert(null)}
-                className="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-semibold transition-all cursor-pointer"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
               >
                 Close Preview
               </button>
