@@ -1,90 +1,30 @@
 export const RESUME_DATA = {
   name: "DARAPUREDDY DEVENDRA KUMAR",
-
-  phone: "+91 8341695598",
-
+  title: "AI ENGINEER | PYTHON DEVELOPER | MACHINE LEARNING | NLP | AUTOMATION",
   email: "darapureddydevendra13579@gmail.com",
-
-  linkedin: "LinkedIn",
-
+  phone: "+91 8341695598",
   location: "India",
+  portfolio: "devendrakumar-portfolio.vercel.app",
 
   summary:
-    "AI Developer with 1+ year of experience designing and deploying intelligent automation and NLP-driven systems using Python, FastAPI, and modern AI frameworks. Hands-on experience building real-world solutions involving embeddings, resume intelligence, API-driven automation, computer vision, and deep learning. Strong foundation in Large Language Models (LLMs), including GPT-based architectures, with experience integrating AI into backend systems. Passionate about solving complex business problems through automation, AI, and data-driven solutions.",
-
-  certifications: [
-    {
-      title: "IEEE SSL/TLS Technical Workshop",
-      issuer: "IEEE Student Branch (2023)",
-      details:
-        "Comprehensive technical training on Secure Sockets Layer (SSL) and Transport Layer Security (TLS) cryptographic protocols, public key infrastructure, and secure network encryption."
-    },
-
-    {
-      title: "Tech Triumph 1.0 Hackathon",
-      issuer: "Department of Computer Science (2023)",
-      details:
-        "Participated in a high-intensity hackathon building rapid AI prototypes, developing backend logic, and presenting working software solutions under strict time constraints."
-    },
-
-    {
-      title: "Python & Machine Learning Foundations",
-      issuer: "Academic Certification (2023)",
-      details:
-        "Hands-on certification covering core Python programming, data manipulation with Pandas and NumPy, supervised learning models, and model evaluation metrics."
-    },
-
-    {
-      title: "Business Analysis Internship Certification",
-      issuer: "Outlook Publishing India Pvt. Ltd. (Apr 2024 - Jul 2024)",
-      details:
-        "Official certificate of internship completion from Outlook Publishing India Pvt. Ltd. Recognized for conducting market research, data visualization dashboards, and requirements analysis."
-    }
-  ],
+    "AI Developer / Python Developer with 1.5+ year of professional experience building AI-enabled automation, NLP solutions, and API-driven backend systems.[cite: 1] Hands-on experience with Python, FastAPI, REST APIs, LLM integration, GPT-based architectures, prompt engineering, embeddings, machine learning, deep learning, and workflow automation.[cite: 1] Experienced in developing business automation workflows with OAuth authentication, secure token management, API testing, validation, and modular backend design.[cite: 1] Strong project experience in computer vision and deep learning, including underwater marine-life detection and bone deformity detection, with practical model experimentation, dataset preparation, evaluation metrics, and performance analysis.[cite: 1] Business Analyst Intern experience with market research, competitive analysis, Power BI, Tableau, Excel, data cleaning, formatting, validation, insights extraction, workflow documentation, requirement specifications, and stakeholder discussions to support business strategy, content planning, data-driven decision-making, and process refinement.[cite: 1]",
 
   technicalSkills: {
     largeLanguageModels: [
-      "GPT-3.5/4 (OpenAI APIs)",
-      "OLLAMA",
-      "LLM Integration",
-      "Prompt Engineering"
+      "Large Language Models (LLMs)", "GPT-3.5/4", "OpenAI APIs", "LLM Integration", "Prompt Engineering", "OLLAMA", "Embeddings"
     ],
-
-    programming: [
-      "Python",
-      "Java",
-      "C/C++",
-      "HTML",
-      "CSS"
-    ],
-
+    programming: ["Python", "Java", "C", "C++", "HTML", "CSS"],
     aiMl: [
-      "NLP",
-      "Machine Learning",
-      "Deep Learning",
-      "Embeddings",
-      "Computer Vision"
+      "NLP", "Machine Learning", "Deep Learning", "CNN", "VGG16", "LSTM", "Bi-LSTM", "Transfer Learning"
     ],
-
+    computerVision: [
+      "YOLOv8", "YOLOv9", "Object Detection", "Image Classification", "Image Preprocessing", "Data Augmentation"
+    ],
     cloudAndDatabases: [
-      "AWS (EC2, S3, IAM)",
-      "PostgreSQL",
-      "MySQL"
+      "AWS EC2", "AWS S3", "AWS IAM", "PostgreSQL", "MySQL"
     ],
-
     tools: [
-      "Git",
-      "Postman",
-      "Power BI",
-      "Tableau",
-      "VS Code",
-      "PyTorch",
-      "FastAPI",
-      "TensorFlow",
-      "Pandas",
-      "NumPy",
-      "Matplotlib",
-      "Scikit-learn"
+      "PyTorch", "TensorFlow", "NumPy", "Pandas", "Matplotlib", "Git", "Postman", "Power BI", "Tableau", "Excel", "VS Code"
     ]
   },
 
@@ -92,179 +32,117 @@ export const RESUME_DATA = {
     {
       role: "Associate Python Developer",
       company: "Infologitech",
-      duration: "Nov 2024 - Present",
+      duration: "Nov 2024 – Present",
       location: "Hyderabad, India",
-
       bullets: [
-        "Developed LinkedIn workflow automation with OAuth authentication, automated posting, and image uploading.",
-        "Built an AI Resume Scoring System using FastAPI, NLP, semantic embeddings, and structured scoring logic.",
-        "Implemented GitHub automation for repository creation, project uploads, and secure token-based operations.",
-        "Performed Postman API testing to validate request flows and automation reliability.",
-        "Improved backend architecture through better error handling, validation, and modular code structure.",
-        "Worked on multi-vendor automation workflows with secure token management."
+        "Built a Resume Scoring System using Python and FastAPI to automate resume processing and candidate evaluation against defined job-related criteria.[cite: 1]",
+        "Implemented NLP and embedding-based processing to extract and represent resume information for semantic comparison and candidate matching.[cite: 1]",
+        "Designed scoring logic to evaluate candidates across skills, experience, location, hourly rate, notice period, and visa status, producing structured candidate scores.[cite: 1]",
+        "Developed REST APIs in FastAPI for resume processing, scoring, and integration with the application workflow.[cite: 1]",
+        "Worked with PostgreSQL and vector embeddings to store candidate-related data and support similarity-based resume evaluation.[cite: 1]",
+        "Integrated document-processing and text-extraction workflows to convert resume content into structured information used by the scoring pipeline.[cite: 1]",
+        "Developed Python-based automation workflows to automate repetitive business operations across web applications and APIs, reducing manual data entry and improving process consistency.[cite: 1]",
+        "Built and maintained LinkedIn automation that handled OAuth authentication, automated content posting, and image uploads as part of an end-to-end workflow.[cite: 1]",
+        "Developed a resume scoring system using FastAPI, NLP, and embeddings to process resume information and evaluate candidates against defined scoring criteria.[cite: 1]",
+        "Designed backend APIs with FastAPI to support resume processing, scoring, and integration with other application components.[cite: 1]",
+        "Implemented GitHub automation to create repositories and upload projects programmatically, using secure token-based authentication for API access.[cite: 1]",
+        "Performed API testing and troubleshooting with Postman by validating request parameters, authentication, response data, and end-to-end API workflows.[cite: 1]",
+        "Worked on multi-vendor automation workflows that connected vendor information, authentication, API communication, and browser-based operations into repeatable business processes.[cite: 1]",
+        "Worked with PostgreSQL and vector embeddings for AI/NLP-related backend workflows and supported data processing required for resume intelligence applications.[cite: 1]"
       ]
     },
-
     {
       role: "Business Analyst Intern",
       company: "Outlook Publishing India Pvt. Ltd.",
-      duration: "Apr 2024 - Jul 2024",
+      duration: "Apr 2024 – Jul 2024",
       location: "Remote",
-
       bullets: [
-        "Conducted detailed market research and competitive analysis to support business strategy and content planning.",
-        "Created dashboards and analytical reports using Power BI, Tableau, and Excel.",
-        "Worked on data cleaning, formatting, and insights extraction for editorial and marketing teams.",
-        "Documented workflows, prepared requirement specifications, and participated in stakeholder discussions."
+        "Conducted market research and competitive analysis to support business strategy, content planning, and data-driven decision-making.[cite: 1]",
+        "Created analytical dashboards and visual reports using Power BI, Tableau, and Excel to communicate business insights to stakeholders.[cite: 1]",
+        "Performed data cleaning, formatting, validation, and insights extraction for editorial and marketing teams.[cite: 1]",
+        "Documented workflows and prepared requirement specifications while participating in stakeholder discussions to clarify business needs and refine processes.[cite: 1]",
+        "Analyzed market research and competitor information to identify relevant trends and summarize findings for business and content planning.[cite: 1]",
+        "Collected and validated business data from multiple sources to prepare accurate information for analysis, reporting, and stakeholder presentations.[cite: 1]"
       ]
     }
   ],
 
-  /*
-   * IMPORTANT:
-   * Keep all six major projects together here.
-   * This gives the AI one authoritative project list.
-   */
   projects: [
     {
-      title: "Bone Deformity & Fracture Detection",
-      subtitle: "YOLOv9 Deep Learning & Medical Image Detection",
-
-      technologies: [
-        "YOLOv9",
-        "YOLOv8",
-        "EfficientNet B0",
-        "VGG16",
-        "MobileNetv3",
-        "PyTorch",
-        "Python"
-      ],
-
+      title: "Underwater Image Detection for Marine Life Analysis",
+      subtitle: "",
+      technologies: ["YOLOv8", "CNN", "PyTorch", "TensorFlow", "NumPy", "Pandas", "Matplotlib"],
       bullets: [
-        "Preprocessed a curated medical dataset of 4,083 bone X-rays consisting of fractured and non-fractured images.",
-        "Benchmarked multiple deep learning architectures including EfficientNet B0 and VGG16 against YOLO object detection models.",
-        "Implemented YOLOv9 using the gelan-c architecture with 621 layers, 25.4M parameters, and 103.2 GFLOPs.",
-        "Achieved 77% mAP@50 for fracture bounding-box localization.",
-        "Optimized inference latency to approximately 2.0ms per X-ray image.",
-        "Evaluated training losses across 100 epochs to reduce overfitting on low-contrast grayscale medical imagery."
+        "Developed a deep learning-based marine-life detection system to identify and localize underwater objects in challenging low-visibility and distorted-lighting conditions.[cite: 1]",
+        "Worked with an underwater animal dataset containing multiple marine-life classes; the project evaluated image classification and object detection approaches.[cite: 1]",
+        "Applied dataset preparation and preprocessing techniques including image resizing/normalization, data augmentation, selective data cleaning, and model-ready dataset splitting.[cite: 1]",
+        "Experimented with CNN-based classification at 32x32 and 64x64 input resolutions and analyzed precision, recall, F1-score, and accuracy across classes.[cite: 1]",
+        "For YOLOv8, selected 8 classes from the larger dataset and prepared object-detection annotations by drawing bounding boxes and generating image coordinates.[cite: 1]",
+        "Trained and evaluated YOLOv8 for multi-class real-time object detection using confusion matrices, precision-recall analysis, and loss curves.[cite: 1]",
+        "Achieved 76% mAP50 in the project results, with an inference speed of 1.3 ms per image; the presentation identified Starfish as a strong-performing class and Seahorse as an area for further improvement.[cite: 1]",
+        "Analyzed the trade-off between detection accuracy, inference speed, object localization, and computational efficiency for underwater computer-vision applications.[cite: 1]"
       ]
     },
-
     {
-      title: "Glaucoma Detection",
-      subtitle: "Deep Learning & Medical Image Classification",
-
-      technologies: [
-        "Python",
-        "CNN",
-        "VGG16",
-        "LSTM",
-        "Bi-LSTM",
-        "TensorFlow",
-        "PyTorch",
-        "NumPy"
-      ],
-
+      title: "Bone Deformity Detection using Deep Learning",
+      subtitle: "",
+      technologies: ["YOLOv8", "YOLOv9", "CNN", "VGG16", "EfficientNetB0", "MobileNetV3", "PyTorch", "TensorFlow"],
       bullets: [
-        "Prepared glaucoma fundus image datasets using preprocessing and normalization techniques.",
-        "Developed deep learning models including CNN, VGG16, LSTM, and Bi-LSTM for glaucoma disease classification.",
-        "Trained and tuned deep learning models to improve classification performance.",
-        "Evaluated model performance using F1-score.",
-        "Used Python with TensorFlow, PyTorch, and NumPy throughout the machine learning workflow."
+        "Developed a comparative deep learning system for automated detection of bone deformities/fractures in X-ray images and evaluated object-detection and image-classification approaches.[cite: 1]",
+        "Worked with a fracture classification dataset containing 4,083 bone images, including 717 fractured and 3,366 non-fractured images.[cite: 1]",
+        "Designed a preprocessing and model-training pipeline covering dataset preparation, train/test/validation splitting, model building, training, evaluation, and classification.[cite: 1]",
+        "Experimented with MobileNetV3, CNN, VGG16, EfficientNetB0, YOLOv8, and YOLOv9 to compare classification and object-detection performance.[cite: 1]",
+        "Implemented YOLO-based object detection to identify and localize bone deformities and analyzed confusion matrices and loss curves for model behavior.[cite: 1]",
+        "YOLOv9 achieved 0.84 precision, 0.68 recall, and 0.77 mAP50 in the reported comparison, with inference speed of approximately 2.0 ms per image.[cite: 1]",
+        "Compared model performance across precision, recall, F1-score, and mAP50 and identified opportunities for further fine-tuning and hyperparameter optimization.[cite: 1]"
       ]
     },
-
-    {
-      title: "Underwater Image Detection",
-      subtitle: "YOLOv8 Object Detection & Deep Learning",
-
-      technologies: [
-        "Python",
-        "YOLOv8",
-        "PyTorch",
-        "TensorFlow",
-        "NumPy",
-        "Pandas",
-        "Matplotlib"
-      ],
-
-      bullets: [
-        "Built a marine-life detection system using YOLOv8 for underwater species identification.",
-        "Performed dataset annotation, cleaning, and preprocessing for model training.",
-        "Trained and fine-tuned the detection model using augmentation techniques for low-visibility underwater environments.",
-        "Evaluated detection performance using mAP, IoU, precision, and recall metrics."
-      ]
-    },
-
-    {
-      title: "AI Resume Scoring System",
-      subtitle: "FastAPI, NLP & Semantic Embeddings",
-
-      technologies: [
-        "Python",
-        "FastAPI",
-        "NLP",
-        "Semantic Embeddings",
-        "PostgreSQL"
-      ],
-
-      bullets: [
-        "Built an AI-powered resume scoring system using FastAPI, NLP, and semantic embeddings.",
-        "Implemented structured scoring logic for evaluating candidate information.",
-        "Developed backend APIs for processing and scoring resume data.",
-        "Worked with semantic representations to improve resume-to-requirement matching."
-      ]
-    },
-
-    {
-      title: "LinkedIn & GitHub Workflow Automation",
-      subtitle: "Python Automation, OAuth & API Integration",
-
-      technologies: [
-        "Python",
-        "OAuth",
-        "REST APIs",
-        "LinkedIn APIs",
-        "GitHub APIs"
-      ],
-
-      bullets: [
-        "Developed LinkedIn workflow automation using OAuth authentication.",
-        "Automated LinkedIn posting and media uploads.",
-        "Implemented GitHub automation for repository creation and project uploads.",
-        "Built secure token-based automation workflows for external platform integrations."
-      ]
-    },
-
     {
       title: "Cloud-Based Cab Hiring System",
-      subtitle: "AWS Cloud Deployment",
-
-      technologies: [
-        "HTML",
-        "CSS",
-        "PHP",
-        "AWS EC2",
-        "AWS S3",
-        "AWS IAM"
-      ],
-
+      subtitle: "",
+      technologies: ["AWS EC2", "AWS S3", "AWS IAM", "PHP", "HTML", "CSS"],
       bullets: [
-        "Developed a complete cab-booking platform with login, booking flow, and ride-status features.",
-        "Built backend logic in PHP for fare calculation, booking workflows, and validation.",
-        "Deployed the application using AWS EC2.",
-        "Used AWS S3 for storage and AWS IAM for secure role management."
+        "Developed a cloud-based cab-booking application with user login, booking workflow, ride-status tracking, fare calculation, and validation logic.[cite: 1]",
+        "Implemented backend business logic in PHP for booking operations, fare calculation, input validation, and ride workflow management.[cite: 1]",
+        "Deployed the application on AWS EC2 and used Amazon S3 for storage and IAM for role-based access and cloud resource management.[cite: 1]",
+        "Worked across application and cloud-deployment layers to connect web functionality with AWS infrastructure.[cite: 1]"
+      ]
+    },
+    {
+      title: "Glaucoma Detection using Deep Learning",
+      subtitle: "",
+      technologies: ["CNN", "VGG16", "LSTM", "Bi-LSTM", "TensorFlow", "PyTorch", "NumPy"],
+      bullets: [
+        "Developed a deep learning-based glaucoma classification system using fundus image datasets.[cite: 1]",
+        "Performed image preprocessing and normalization to prepare medical images for model training and evaluation.[cite: 1]",
+        "Experimented with CNN, VGG16, LSTM, and Bi-LSTM architectures for disease classification and compared model behavior.[cite: 1]",
+        "Trained and tuned models with emphasis on classification performance, sensitivity, specificity, and F1-score evaluation.[cite: 1]"
       ]
     }
   ],
 
   education: {
-    degree: "B.Tech - Computer Science & Engineering",
+    degree: "B.Tech – Computer Science & Engineering",
     institution: "Amrita Vishwa Vidyapeetham",
-    duration: "2020-2024"
+    duration: "2020–2024"
   },
 
+  certifications: [
+    {
+      title: "Safe and Secure Communication Using SSL/TLS",
+      issuer: "IEEE",
+      details: ""
+    },
+    {
+      title: "Tech Triumph 1.0 Hackathon",
+      issuer: "CodeChef ASEB",
+      details: ""
+    }
+  ],
+
   achievements: [
-    "Recognized for performance in 2025 during automation development at Infologitech."
+    "Recognized for performance in 2025 during automation development at Infologitech[cite: 1]",
+    "IEEE Certificate for Safe and Secure Communication Using SSL/TLS[cite: 1]",
+    "Participated in Tech Triumph 1.0 Hackathon (CodeChef ASEB)[cite: 1]"
   ]
 };
