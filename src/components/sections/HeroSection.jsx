@@ -78,7 +78,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-sm font-extrabold text-gray-900 dark:text-white leading-none">1+</h3>
+                <h3 className="text-sm font-extrabold text-gray-900 dark:text-white leading-none">1.5+</h3>
                 <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 whitespace-nowrap mt-1">Years Exp</p>
               </div>
             </div>
@@ -238,7 +238,7 @@ const HeroSection = () => {
           
           <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-1.5">About Me</h3>
           <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed font-medium">
-            AI Developer with 1+ year of experience in automation, NLP, and LLM integration.
+            AI Developer with 1.5+ year of experience in automation, NLP, and LLM integration.
           </p>
           <a href="#about" className="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center group-hover:translate-x-1.5 transition-transform">
             Read More <span className="ml-1">→</span>

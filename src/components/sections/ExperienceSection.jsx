@@ -200,7 +200,7 @@ const ExperienceSection = ({ setActiveTab }) => {
           </svg>
         </div>
         <p className="text-sm font-medium text-gray-900 dark:text-gray-200">
-          <strong className="text-blue-600 dark:text-blue-400 font-bold">1+ years</strong> of hands-on experience delivering automation workflows, REST APIs, and data analytics solutions.
+          <strong className="text-blue-600 dark:text-blue-400 font-bold">1.5+ years</strong> of hands-on experience delivering automation workflows, REST APIs, and data analytics solutions.
         </p>
       </div>
     </section>

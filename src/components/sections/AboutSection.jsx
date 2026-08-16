@@ -107,7 +107,7 @@ const AboutSection = ({ setActiveTab }) => {
             </p>
 
             <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm sm:text-base font-normal">
-              I am an AI Developer with 1+ year of experience building intelligent automation solutions and NLP-driven applications using Python, FastAPI, and modern AI frameworks. I enjoy turning complex problems into simple, efficient, and scalable solutions.
+              I am an AI Developer with 1.5+ year of experience building intelligent automation solutions and NLP-driven applications using Python, FastAPI, and modern AI frameworks. I enjoy turning complex problems into simple, efficient, and scalable solutions.
             </p>
 
             <p className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm sm:text-base font-normal">
@@ -173,7 +173,7 @@ const AboutSection = ({ setActiveTab }) => {
               </svg>
             </div>
             <div>
-              <h3 className="text-sm font-bold text-gray-900 dark:text-white leading-none">1+</h3>
+              <h3 className="text-sm font-bold text-gray-900 dark:text-white leading-none">1.5+</h3>
               <p className="text-[10px] font-normal text-gray-500 dark:text-gray-400 whitespace-nowrap mt-1">Years Experience</p>
             </div>
           </div>
