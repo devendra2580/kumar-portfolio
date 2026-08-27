@@ -1,5 +1,6 @@
 // ⚡ IMPORT YOUR CONTEXT HERE (Update the path to match where your file actually lives) ⚡
-import { getResumeContext } from '../../src/components/ai-assistant/getDynamicContext'; 
+// ✅ Correct: Only go up one level (../) and include the extension
+import { getResumeContext } from '../src/components/ai-assistant/getDynamicContext.js'; 
 
 export default async function handler(req, res) {
   // Only allow POST requests
