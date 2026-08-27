@@ -16,7 +16,7 @@ const Footer = () => {
           
           {/* LinkedIn Icon */}
           <a
-            href="www.linkedin.com/in/darapureddy-devendra-kumar-a81a18206"
+            href="https://www.linkedin.com/in/darapureddy-devendra-kumar-a81a18206"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-transform hover:scale-110"

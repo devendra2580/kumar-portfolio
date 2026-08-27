@@ -210,7 +210,7 @@ const ContactSection = ({ setActiveTab }) => {
 
             {/* LinkedIn Card */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/darapureddy-devendra-kumar-a81a18206"
               target="_blank"
               rel="noreferrer"
               className="group relative block overflow-hidden bg-white/90 dark:bg-slate-800/90 backdrop-blur-md p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-1.5 hover:shadow-2xl hover:border-blue-400/50 transition-all duration-300"
