@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { getResumeContext } from "./getDynamicContext";
 
 const DevAIChatModal = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
@@ -48,13 +47,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
 
     try {
       // --------------------------------------------------
-      // 1. GET SYSTEM PROMPT
-      // --------------------------------------------------
-
-      const systemPrompt = getResumeContext();
-
-      // --------------------------------------------------
-      // 2. LIMIT CHAT HISTORY
+      // 1. LIMIT CHAT HISTORY
       //
       // Keep only the latest 4 messages.
       // This prevents the request from growing indefinitely.
@@ -62,24 +55,15 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
 
       const recentMessages = updatedMessages.slice(-4);
 
-      const apiMessages = [
-        {
-          role: "system",
-          content: systemPrompt
-        },
-
-        ...recentMessages.map((message) => ({
-          role:
-            message.sender === "user"
-              ? "user"
-              : "assistant",
-
-          content: message.text
-        }))
-      ];
+      // 🛑 The System Prompt has been moved strictly to the backend (/api/chat.js)
+      // to keep it completely hidden from the browser's Network tab.
+      const apiMessages = recentMessages.map((message) => ({
+        role: message.sender === "user" ? "user" : "assistant",
+        content: message.text
+      }));
 
       // --------------------------------------------------
-      // 3. CALL SECURE BACKEND PROXY
+      // 2. CALL SECURE BACKEND PROXY
       //
       // Instead of calling Groq directly and exposing the API key,
       // we call our local Vercel serverless function (/api/chat).
@@ -96,7 +80,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
       });
 
       // --------------------------------------------------
-      // 4. READ RESPONSE
+      // 3. READ RESPONSE
       // --------------------------------------------------
 
       const data = await response.json();
@@ -105,7 +89,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
       console.log("Server Response:", data);
 
       // --------------------------------------------------
-      // 5. HANDLE RATE LIMIT
+      // 4. HANDLE RATE LIMIT
       // --------------------------------------------------
 
       if (response.status === 429) {
@@ -117,7 +101,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
       }
 
       // --------------------------------------------------
-      // 6. HANDLE OTHER API ERRORS
+      // 5. HANDLE OTHER API ERRORS
       // --------------------------------------------------
 
       if (!response.ok) {
@@ -129,7 +113,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
       }
 
       // --------------------------------------------------
-      // 7. VALIDATE RESPONSE
+      // 6. VALIDATE RESPONSE
       // --------------------------------------------------
 
       if (
@@ -152,7 +136,7 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
       }
 
       // --------------------------------------------------
-      // 8. ADD AI RESPONSE
+      // 7. ADD AI RESPONSE
       // --------------------------------------------------
 
       setMessages((previousMessages) => [
