@@ -1,4 +1,4 @@
-import { RESUME_DATA } from "./resumeData";
+import { RESUME_DATA } from "./resumeData.js";
 
 export const getResumeContext = () => {
   // --------------------------------------------------
