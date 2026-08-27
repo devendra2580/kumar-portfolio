@@ -16,7 +16,7 @@ const Footer = () => {
           
           {/* LinkedIn Icon */}
           <a
-            href="https://linkedin.com"
+            href="www.linkedin.com/in/darapureddy-devendra-kumar-a81a18206"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-transform hover:scale-110"
@@ -29,7 +29,7 @@ const Footer = () => {
 
           {/* GitHub Icon */}
           <a
-            href="https://github.com"
+            href="https://github.com/devendra2580"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-transform hover:scale-110"

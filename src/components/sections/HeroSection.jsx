@@ -209,7 +209,7 @@ const HeroSection = () => {
                 </svg>
               </div>
               <a 
-                href="https://linkedin.com" 
+                href="www.linkedin.com/in/darapureddy-devendra-kumar-a81a18206" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-blue-600 dark:text-blue-400 hover:underline font-bold"
