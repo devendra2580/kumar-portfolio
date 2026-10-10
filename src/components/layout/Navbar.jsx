@@ -40,27 +40,27 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative">
       
-      {/* Outer wrapper keeping equal left/right padding */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      {/* RESTORED: w-full max-w-[95%] to retain your exact original UI width. Added gap-4 so elements never overlap. */}
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4 lg:gap-8">
         
         {/* Logo Section */}
         <div 
           onClick={() => handleTabClick('home')} 
-          className="flex items-center space-x-3 cursor-pointer z-50"
+          className="flex items-center space-x-3 cursor-pointer z-50 whitespace-nowrap"
         >
           <span className="text-blue-600 dark:text-blue-400 font-bold text-2xl sm:text-3xl tracking-tight">DK</span>
-          <span className="text-gray-900 dark:text-white font-bold text-lg sm:text-xl">Devendra Kumar</span>
+          <span className="text-gray-900 dark:text-white font-bold text-lg sm:text-xl hidden sm:block">Devendra Kumar</span>
         </div>
 
-        {/* Dynamic View Navigation Links (Desktop) */}
-        <div className="hidden md:flex items-center space-x-4 lg:space-x-8 text-sm lg:text-base font-medium text-gray-700 dark:text-gray-300">
+        {/* Dynamic View Navigation Links (Desktop) - Changed to lg:flex to protect iPad layout */}
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 text-sm xl:text-base font-medium text-gray-700 dark:text-gray-300">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer ${
+                className={`flex items-center space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
                     : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
@@ -82,7 +82,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden lg:inline-flex items-center space-x-2 px-6 py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95"
+            className="group hidden lg:inline-flex items-center space-x-2 px-6 py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
             <svg 
               className="w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
@@ -149,9 +149,9 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             </div>
           </button>
 
-          {/* Hamburger Menu Toggle (Mobile Only) */}
+          {/* Hamburger Menu Toggle (Mobile & Tablet) */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+            className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -171,11 +171,11 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
       {/* Mobile Menu Dropdown */}
       <div 
-        className={`md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 shadow-xl transition-all duration-300 ease-in-out ${
+        className={`lg:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 shadow-xl transition-all duration-300 ease-in-out z-50 ${
           isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'
         }`}
       >
-        <div className="flex flex-col space-y-2 px-4 sm:px-6">
+        <div className="flex flex-col space-y-2 px-4 sm:px-6 max-w-7xl mx-auto">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
