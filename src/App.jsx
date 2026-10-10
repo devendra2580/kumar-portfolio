@@ -30,17 +30,13 @@ function App() {
     setIsChatOpen((prev) => !prev);
   };
 
-  // 1. Disable browser's automatic scroll restoration on page load/reload
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-    
-    // Force scroll to top on fresh load / refresh
     window.scrollTo(0, 0);
   }, []);
 
-  // 2. Scroll to top whenever active tab changes
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -49,7 +45,6 @@ function App() {
     });
   }, [activeTab]);
 
-  // 3. Listen for URL hash changes
   useEffect(() => {
     const handleHashChange = () => {
       setActiveTabState(getTabFromHash());
@@ -62,7 +57,9 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative flex flex-col justify-between">
+      {/* Master Layout Wrapper: Locks the app width to the exact screen size */}
+      <div className="relative flex flex-col justify-between min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        
         <div>
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
           
@@ -79,7 +76,6 @@ function App() {
 
         <Footer />
         
-        {/* Floating Chat Icon & Modal */}
         <ChatIcon 
           isOpen={isChatOpen} 
           onToggleChat={handleToggleChat} 
