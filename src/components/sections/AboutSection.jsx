@@ -97,7 +97,7 @@ const AboutSection = ({ setActiveTab }) => {
       {/* Main Content Layout */}
       <div className="space-y-10 relative z-10">
         
-        {/* RESTORED: items-start puts the layout exactly back to how you originally had it. */}
+        {/* items-start aligns the Left Column and Right Column perfectly to the top line */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
           
           {/* Left Side: Bio Paragraphs */}
@@ -115,8 +115,12 @@ const AboutSection = ({ setActiveTab }) => {
             </p>
           </div>
 
-          {/* RESTORED: lg:-mt-24 is back! This physically shifts the entire image section upwards into the middle. */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 lg:-mt-24">
+          {/* 
+            PERFECT UPSIDE ALIGNMENT FIX: 
+            Using `transform lg:-translate-y-20` forcefully hoists the image exactly to the top upside level
+            without causing any CSS layout collapse. The bottom elements remain 100% safe.
+          */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 transform lg:-translate-y-20">
             
             <div className="relative group flex items-center justify-center cursor-pointer animate-float-hero">
               
@@ -135,8 +139,8 @@ const AboutSection = ({ setActiveTab }) => {
               {/* Breathing Halo Aura */}
               <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
-              {/* Avatar Container: Keeps the bg-white fix so the black ring never returns */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+              {/* Avatar Container: Strict bg-white and border-white keeps the black ring away permanently */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
                 <img
                   src={profileImg}
                   alt="Darapureddy Devendra Kumar"
@@ -163,7 +167,7 @@ const AboutSection = ({ setActiveTab }) => {
 
         </div>
 
-        {/* Quick Info Metric Badges */}
+        {/* Quick Info Metric Badges - These are now 100% safe from overlapping! */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full">
           
           <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-3.5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-xs hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center space-x-3 group justify-center sm:justify-start">
