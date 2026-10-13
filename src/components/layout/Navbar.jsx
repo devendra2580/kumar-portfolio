@@ -38,9 +38,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative overflow-hidden">
       
-      {/* 
-        MASTER CONTAINER: Added 'gap-4 lg:gap-6' so the Left, Middle, and Right sections are mathematically FORCED to maintain distance.
-      */}
+      {/* MASTER CONTAINER: Perfectly locked to 95% screen width. Uses justify-between to anchor Left and Right securely to the edges. */}
       <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4 lg:gap-6">
         
         {/* 1. LEFT SIDE: Logo */}
@@ -49,7 +47,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           className="flex items-center gap-1.5 sm:gap-2 cursor-pointer z-50 flex-shrink-0"
         >
           <span className="text-blue-600 dark:text-blue-400 font-bold text-2xl lg:text-3xl tracking-tight">DK</span>
-          {/* FIXED: 'hidden sm:block' ensures Devendra Kumar ALWAYS shows on laptops/desktops */}
           <span className="text-gray-900 dark:text-white font-bold text-lg lg:text-xl hidden sm:block whitespace-nowrap">
             Devendra Kumar
           </span>
@@ -66,10 +63,11 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 className={`flex items-center gap-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
-                    : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
+                    // RESTORED: text-gray-700 dark:text-gray-200 added back so it is white/light-gray in dark mode
+                    : 'text-gray-700 dark:text-gray-200 border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {/* FIXED: Icons only show on massive 2xl monitors to protect 1024px and 1280px laptops from overlapping */}
+                {/* Icons only show on massive 2xl monitors to protect 1024px and 1280px laptops from overlapping */}
                 <svg className="hidden 2xl:block w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
@@ -97,7 +95,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            {/* FIXED: Uses "Resume" on standard laptops to save space, "Download Resume" on 2xl monitors */}
             <span className="hidden 2xl:block">Download Resume</span>
             <span className="block 2xl:hidden">Resume</span>
           </a>
@@ -125,7 +122,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 </svg>
               </div>
               <div className={`absolute left-0.5 top-0.5 sm:left-1 sm:top-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center z-10 ${
-                darkMode ? 'translate-x-6 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
+                darkMode ? 'translate-x-7 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
               }`}>
                 {darkMode ? (
                   <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-white" viewBox="0 0 20 20">
