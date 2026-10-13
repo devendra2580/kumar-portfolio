@@ -147,11 +147,11 @@ const HeroSection = () => {
             <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
             {/* Main Avatar Container */}
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
               <img
                 src={profileImg}
                 alt="Darapureddy Devendra Kumar"
-                className="w-full h-full object-cover rounded-full group-hover:scale-108 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover rounded-full group-hover:scale-108 transition-transform duration-700 ease-out bg-white"
               />
             </div>
 
