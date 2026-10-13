@@ -97,11 +97,11 @@ const AboutSection = ({ setActiveTab }) => {
       {/* Main Content Layout */}
       <div className="space-y-10 relative z-10">
         
-        {/* GRID FIX: Removed items-center to stop it from pushing the text down. */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2">
+        {/* RESTORED: items-start puts the layout exactly back to how you originally had it. */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
           
-          {/* Left Side: Bio Paragraphs. Uses justify-start to pin the text to the top, removing the huge gap. */}
-          <div className="lg:col-span-7 flex flex-col justify-start space-y-4 text-center lg:text-left">
+          {/* Left Side: Bio Paragraphs */}
+          <div className="lg:col-span-7 space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
             <p className="text-blue-600 dark:text-blue-400 font-semibold text-base sm:text-lg tracking-wide">
               AI Developer | Python Developer | Automation Enthusiast
             </p>
@@ -115,8 +115,8 @@ const AboutSection = ({ setActiveTab }) => {
             </p>
           </div>
 
-          {/* Right Side: Profile Photo. Uses justify-center to automatically position itself perfectly in the vertical middle without margin hacks. */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center mt-8 lg:mt-0">
+          {/* RESTORED: lg:-mt-24 is back! This physically shifts the entire image section upwards into the middle. */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 lg:-mt-24">
             
             <div className="relative group flex items-center justify-center cursor-pointer animate-float-hero">
               
@@ -135,8 +135,8 @@ const AboutSection = ({ setActiveTab }) => {
               {/* Breathing Halo Aura */}
               <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
-              {/* Avatar Container: Strict bg-white and border-white to eliminate the dark ring. */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+              {/* Avatar Container: Keeps the bg-white fix so the black ring never returns */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
                 <img
                   src={profileImg}
                   alt="Darapureddy Devendra Kumar"
