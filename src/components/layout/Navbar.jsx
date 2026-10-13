@@ -39,23 +39,23 @@ const Navbar = ({ activeTab, setActiveTab }) => {
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative overflow-hidden">
       
       {/* 
-        100% LOCKED UI SOLUTION: 
-        Uses Flexbox on Mobile, but switches strictly to CSS Grid (grid-cols-12) on Desktop (lg).
-        This guarantees the left, middle, and right sections have exact, unbreakable boundaries.
+        100% SECURE GRID LAYOUT:
+        We switch to grid-cols-12 on Desktop (lg) to STRICTLY lock the left, middle, and right sections. 
+        Grid walls physically cannot push into each other, guaranteeing no overlapping.
       */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex lg:grid lg:grid-cols-12 items-center justify-between lg:gap-2 xl:gap-4">
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-3 lg:py-4 flex lg:grid lg:grid-cols-12 items-center justify-between gap-4">
         
-        {/* 1. LEFT SIDE: Logo (Locked to 3 Grid Columns) */}
+        {/* 1. LEFT: Logo (Locked to 3 Columns on desktop) */}
         <div 
           onClick={() => handleTabClick('home')} 
           className="lg:col-span-3 flex items-center justify-start space-x-2 sm:space-x-3 cursor-pointer z-50 whitespace-nowrap"
         >
           <span className="text-blue-600 dark:text-blue-400 font-bold text-2xl xl:text-3xl tracking-tight">DK</span>
-          <span className="text-gray-900 dark:text-white font-bold text-lg xl:text-xl hidden sm:block">Devendra Kumar</span>
+          <span className="text-gray-900 dark:text-white font-bold text-lg xl:text-xl hidden xl:block">Devendra Kumar</span>
         </div>
 
-        {/* 2. MIDDLE SIDE: Navigation Links (Locked to 6 Grid Columns for perfectly equal center spacing) */}
-        <div className="hidden lg:flex lg:col-span-6 items-center justify-center gap-2 xl:gap-6 w-full">
+        {/* 2. MIDDLE: Nav Links (Locked to 6 Columns on desktop for equal center spacing) */}
+        <div className="hidden lg:flex lg:col-span-6 items-center justify-center gap-3 xl:gap-6 w-full">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -68,24 +68,25 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                     : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {/* Icons safely hide on 1024px to guarantee fit inside the Grid cell */}
-                <svg className="hidden xl:block w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Icons only show on large screens (1280px+) to save space on 1024px laptops */}
+                <svg className="hidden xl:block w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
-                <span className="text-[11px] xl:text-[15px] font-bold">{item.label}</span>
+                {/* Font scales down perfectly on 1024px */}
+                <span className="text-[11px] xl:text-[14px] 2xl:text-[15px] font-bold">{item.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* 3. RIGHT SIDE: Actions Container (Locked to 3 Grid Columns) */}
-        <div className="flex items-center justify-end gap-2 sm:gap-3 xl:gap-4 lg:col-span-3 z-50">
+        {/* 3. RIGHT: Actions (Locked to 3 Columns on desktop) */}
+        <div className="flex items-center justify-end gap-3 xl:gap-4 lg:col-span-3 z-50">
           
-          {/* Download Resume Button */}
+          {/* Resume Button */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden sm:flex items-center justify-center space-x-1.5 xl:space-x-2 px-3 xl:px-6 py-2 xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[11px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="group hidden sm:flex items-center justify-center space-x-1.5 xl:space-x-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[11px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
             <svg 
               className="hidden xl:block w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
