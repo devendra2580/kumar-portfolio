@@ -38,10 +38,8 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative overflow-hidden">
       
-      {/* MASTER CONTAINER: Perfectly locked to 95% screen width. Uses justify-between to anchor Left and Right securely to the edges. */}
       <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4 lg:gap-6">
         
-        {/* 1. LEFT SIDE: Logo */}
         <div 
           onClick={() => handleTabClick('home')} 
           className="flex items-center gap-1.5 sm:gap-2 cursor-pointer z-50 flex-shrink-0"
@@ -52,7 +50,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           </span>
         </div>
 
-        {/* 2. MIDDLE SIDE: Navigation Links */}
         <div className="hidden lg:flex flex-1 items-center justify-center gap-2.5 lg:gap-3 xl:gap-5 2xl:gap-8 min-w-0">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
@@ -63,32 +60,28 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 className={`flex items-center gap-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
-                    // RESTORED: text-gray-700 dark:text-gray-200 added back so it is white/light-gray in dark mode
                     : 'text-gray-700 dark:text-gray-200 border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {/* Icons only show on massive 2xl monitors to protect 1024px and 1280px laptops from overlapping */}
                 <svg className="hidden 2xl:block w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
-                {/* Text is safely sized for 1024/1280px laptops, expands on 2xl */}
                 <span className="text-[12px] lg:text-[13px] 2xl:text-[15px] font-bold">{item.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* 3. RIGHT SIDE: Actions Container */}
         <div className="flex items-center gap-2 lg:gap-3 2xl:gap-4 z-50 flex-shrink-0">
           
-          {/* Download Resume Button */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
             className="group hidden sm:flex items-center justify-center gap-1.5 2xl:gap-2 px-4 2xl:px-6 py-2 2xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[12px] 2xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
+            {/* RESTORED: The 'hidden 2xl:block' was removed. The bouncing icon now displays beautifully on all screens. */}
             <svg 
-              className="hidden 2xl:block w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
+              className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0 text-blue-600 dark:text-blue-400 animate-bounce" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -99,7 +92,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             <span className="block 2xl:hidden">Resume</span>
           </a>
 
-          {/* Dark Mode Toggle */}
           <button 
             onClick={toggleDarkMode} 
             className="relative p-0.5 focus:outline-none cursor-pointer group flex-shrink-0"
@@ -122,7 +114,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 </svg>
               </div>
               <div className={`absolute left-0.5 top-0.5 sm:left-1 sm:top-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center z-10 ${
-                darkMode ? 'translate-x-7 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
+                darkMode ? 'translate-x-6 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
               }`}>
                 {darkMode ? (
                   <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-white" viewBox="0 0 20 20">
@@ -137,7 +129,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             </div>
           </button>
 
-          {/* Hamburger Menu Toggle (Mobile & Tablet) */}
           <button
             className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -157,7 +148,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       <div 
         className={`lg:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 shadow-xl transition-all duration-300 ease-in-out z-50 ${
           isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'
