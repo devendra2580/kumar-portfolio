@@ -97,8 +97,8 @@ const AboutSection = ({ setActiveTab }) => {
       {/* Main Content Layout */}
       <div className="space-y-10 relative z-10">
         
-        {/* Top Bio Block: RESTORED back to your original items-start */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
+        {/* FIXED: Changed to `items-center` so the image and the text automatically level themselves to the exact middle */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
           
           {/* Left Side: Bio Paragraphs */}
           <div className="lg:col-span-7 space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -115,8 +115,8 @@ const AboutSection = ({ setActiveTab }) => {
             </p>
           </div>
 
-          {/* Right Side: Profile Photo Container. RESTORED lg:-mt-24 to pull it back up into the middle! */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 lg:-mt-24">
+          {/* FIXED: Changed to `justify-center` and removed `-mt-24` so it sits perfectly in the center of the grid */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center mt-8 lg:mt-0">
             
             <div className="relative group flex items-center justify-center cursor-pointer animate-float-hero">
               
@@ -135,7 +135,7 @@ const AboutSection = ({ setActiveTab }) => {
               {/* Breathing Halo Aura */}
               <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
-              {/* Avatar Container: Keeps the bg-white fix so the black ring never returns */}
+              {/* Avatar Container: Background stays bg-white to prevent the black ring */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
                 <img
                   src={profileImg}
