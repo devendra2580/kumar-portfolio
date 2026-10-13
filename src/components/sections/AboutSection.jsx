@@ -97,8 +97,8 @@ const AboutSection = ({ setActiveTab }) => {
       {/* Main Content Layout */}
       <div className="space-y-10 relative z-10">
         
-        {/* Top Bio Block */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start pt-2">
+        {/* Top Bio Block: Changed to items-center to perfectly center the text and image vertically */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
           
           {/* Left Side: Bio Paragraphs */}
           <div className="lg:col-span-7 space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -115,8 +115,8 @@ const AboutSection = ({ setActiveTab }) => {
             </p>
           </div>
 
-          {/* Right Side: Shifted Upward Orbit Profile Photo Container */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-start mt-8 lg:mt-0 lg:-mt-24">
+          {/* Right Side: Profile Photo Container */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center mt-8 lg:mt-0">
             
             <div className="relative group flex items-center justify-center cursor-pointer animate-float-hero">
               
@@ -135,12 +135,12 @@ const AboutSection = ({ setActiveTab }) => {
               {/* Breathing Halo Aura */}
               <div className="absolute w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-500 to-cyan-400 animate-aura-glow group-hover:scale-110 transition-transform duration-500"></div>
 
-              {/* Avatar Container */}
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white dark:bg-slate-800 p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
+              {/* Avatar Container: Removed dark:bg-slate-800 to fix the black ring issue */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full bg-white p-1.5 overflow-hidden shadow-2xl z-10 border-4 border-white dark:border-slate-800 group-hover:ring-4 group-hover:ring-blue-400/60 transition-all duration-500">
                 <img
                   src={profileImg}
                   alt="Darapureddy Devendra Kumar"
-                  className="w-full h-full object-cover rounded-full group-hover:scale-108 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover rounded-full group-hover:scale-108 transition-transform duration-700 ease-out bg-white"
                 />
               </div>
 
