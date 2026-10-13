@@ -7,7 +7,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Track window scroll percentage for the progress bar
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -31,7 +30,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
     { id: 'contact', label: 'Contact', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' }
   ];
 
-  // Helper to handle closing the menu when clicking a link on mobile
   const handleTabClick = (id) => {
     setActiveTab(id);
     setIsMobileMenuOpen(false);
@@ -40,10 +38,13 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative">
       
-      {/* Container: Moved massive gaps to 2xl so 1280px stays safely spaced */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-2 lg:gap-4 2xl:gap-8">
+      {/* 
+        MASTER CONTAINER: justify-between evenly spaces the Left, Center, and Right blocks. 
+        Removed parent gaps so the three sections dictate their own safe spacing. 
+      */}
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         
-        {/* Logo Section */}
+        {/* LEFT: Logo Section - flex-shrink-0 ensures it NEVER gets squished */}
         <div 
           onClick={() => handleTabClick('home')} 
           className="flex items-center space-x-2 sm:space-x-3 cursor-pointer z-50 whitespace-nowrap flex-shrink-0"
@@ -53,24 +54,23 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         </div>
 
         {/* 
-          FIXED FOR 1280px SCREEN: Changed w-full to flex-1 min-w-0 to physically prevent pushing into logo.
-          Shifted large spacings to 2xl.
+          CENTER: Navigation Links 
+          flex-1 forces this container to take up ONLY the remaining space between the logo and buttons.
         */}
-        <div className="hidden lg:flex flex-1 items-center justify-center space-x-2 lg:space-x-3 2xl:space-x-6 text-[13px] 2xl:text-base font-medium text-gray-700 dark:text-gray-300 min-w-0">
+        <div className="hidden lg:flex flex-1 items-center justify-center space-x-2 lg:space-x-4 xl:space-x-8 text-[13px] xl:text-base font-medium text-gray-700 dark:text-gray-300 px-4">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center space-x-1 2xl:space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
+                className={`flex items-center space-x-1 xl:space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
                     : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {/* SVG sizing protected for 1280px */}
-                <svg className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 min-w-[14px] 2xl:min-w-[16px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 min-w-[14px] xl:min-w-[16px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
                 <span>{item.label}</span>
@@ -79,28 +79,27 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           })}
         </div>
 
-        {/* Right Actions Container */}
+        {/* RIGHT: Actions Container - flex-shrink-0 prevents it from being pushed off the screen */}
         <div className="flex items-center space-x-3 sm:space-x-4 z-50 flex-shrink-0">
           
-          {/* Download Resume Button: Adjusted padding to save space on 1280px */}
+          {/* Download Resume Button */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden lg:inline-flex items-center space-x-1.5 2xl:space-x-2 px-3 lg:px-4 2xl:px-6 py-2 2xl:py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[12px] 2xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="group hidden lg:inline-flex items-center space-x-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[13px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
             <svg 
-              className="w-3.5 h-3.5 2xl:w-4 2xl:h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
+              className="w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span className="hidden 2xl:inline">Download Resume</span>
-            <span className="inline 2xl:hidden">Resume</span>
+            <span>Download Resume</span>
           </a>
 
-          {/* High-Contrast, Vivid Animated Dark/Light Toggle (UNTOUCHED) */}
+          {/* Dark Mode Toggle */}
           <button 
             onClick={toggleDarkMode} 
             className="relative p-0.5 focus:outline-none cursor-pointer group"
