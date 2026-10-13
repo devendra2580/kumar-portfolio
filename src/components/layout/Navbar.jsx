@@ -36,25 +36,27 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative">
+    <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative overflow-hidden">
       
-      {/* MASTER CONTAINER: Perfectly locked to 95% screen width. Uses justify-between to anchor Left and Right securely to the edges. */}
-      <div className="w-full max-w-[95%] mx-auto py-3 lg:py-4 flex items-center justify-between">
+      {/* 
+        MASTER CONTAINER: Added 'gap-4 lg:gap-6' so the Left, Middle, and Right sections are mathematically FORCED to maintain distance.
+      */}
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-3 lg:py-4 flex items-center justify-between gap-4 lg:gap-6">
         
-        {/* 1. LEFT SIDE: Logo (Locked with flex-shrink-0 so it cannot be crushed) */}
+        {/* 1. LEFT SIDE: Logo */}
         <div 
           onClick={() => handleTabClick('home')} 
-          className="flex items-center gap-2 cursor-pointer z-50 flex-shrink-0"
+          className="flex items-center gap-1.5 sm:gap-2 cursor-pointer z-50 flex-shrink-0"
         >
           <span className="text-blue-600 dark:text-blue-400 font-bold text-2xl lg:text-3xl tracking-tight">DK</span>
-          {/* Full name hides on 1024px to free up space, reappears beautifully on 1280px+ monitors */}
-          <span className="text-gray-900 dark:text-white font-bold text-lg xl:text-xl hidden xl:block whitespace-nowrap">
+          {/* FIXED: 'hidden sm:block' ensures Devendra Kumar ALWAYS shows on laptops/desktops */}
+          <span className="text-gray-900 dark:text-white font-bold text-lg lg:text-xl hidden sm:block whitespace-nowrap">
             Devendra Kumar
           </span>
         </div>
 
-        {/* 2. MIDDLE SIDE: Navigation Links (flex-1 forces it to perfectly fill the space between logo and buttons) */}
-        <div className="hidden lg:flex flex-1 items-center justify-center gap-2.5 xl:gap-6 min-w-0 px-2 lg:px-4">
+        {/* 2. MIDDLE SIDE: Navigation Links */}
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-2.5 lg:gap-3 xl:gap-5 2xl:gap-8 min-w-0">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -64,38 +66,40 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 className={`flex items-center gap-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
-                    : 'border-transparent hover:text-gray-900 dark:hover:text-white text-gray-700 dark:text-gray-300'
+                    : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                {/* Icons are restored! Perfectly sized for all laptop screens */}
-                <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* FIXED: Icons only show on massive 2xl monitors to protect 1024px and 1280px laptops from overlapping */}
+                <svg className="hidden 2xl:block w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
-                {/* Text smoothly scales from 13px (Laptops) to 15px (Monitors) */}
-                <span className="text-[13px] xl:text-[15px] font-bold">{item.label}</span>
+                {/* Text is safely sized for 1024/1280px laptops, expands on 2xl */}
+                <span className="text-[12px] lg:text-[13px] 2xl:text-[15px] font-bold">{item.label}</span>
               </button>
             );
           })}
         </div>
 
-        {/* 3. RIGHT SIDE: Actions (Locked with flex-shrink-0 so it cannot be pushed off the screen) */}
-        <div className="flex items-center gap-3 xl:gap-4 z-50 flex-shrink-0">
+        {/* 3. RIGHT SIDE: Actions Container */}
+        <div className="flex items-center gap-2 lg:gap-3 2xl:gap-4 z-50 flex-shrink-0">
           
           {/* Download Resume Button */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden sm:flex items-center gap-1.5 xl:gap-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[12px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="group hidden sm:flex items-center justify-center gap-1.5 2xl:gap-2 px-4 2xl:px-6 py-2 2xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[12px] 2xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
             <svg 
-              className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
+              className="hidden 2xl:block w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span>Download Resume</span>
+            {/* FIXED: Uses "Resume" on standard laptops to save space, "Download Resume" on 2xl monitors */}
+            <span className="hidden 2xl:block">Download Resume</span>
+            <span className="block 2xl:hidden">Resume</span>
           </a>
 
           {/* Dark Mode Toggle */}
@@ -107,21 +111,21 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             <div className={`absolute -inset-1 rounded-full blur-sm transition-opacity duration-300 ${
               darkMode ? 'bg-blue-500/30 opacity-70 group-hover:opacity-100' : 'bg-amber-400/30 opacity-70 group-hover:opacity-100'
             }`}></div>
-            <div className={`relative w-14 sm:w-16 h-7 sm:h-8 rounded-full p-1 border transition-colors duration-300 flex items-center justify-between shadow-inner ${
+            <div className={`relative w-12 sm:w-16 h-6 sm:h-8 rounded-full p-1 border transition-colors duration-300 flex items-center justify-between shadow-inner ${
               darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-800 border-slate-700'
             }`}>
-              <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center text-amber-400 z-0 pl-0.5">
-                <svg className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-75 opacity-50' : 'scale-100 opacity-100 animate-spin-cw'}`} fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center text-amber-400 z-0">
+                <svg className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-75 opacity-50' : 'scale-100 opacity-100 animate-spin-cw'}`} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clipRule="evenodd" />
                 </svg>
               </div>
-              <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center text-cyan-300 z-0 pr-0.5">
-                <svg className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-100 opacity-100' : 'scale-75 opacity-50'}`} fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center text-cyan-300 z-0">
+                <svg className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-100 opacity-100' : 'scale-75 opacity-50'}`} fill="currentColor" viewBox="0 0 20 20">
                   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                 </svg>
               </div>
               <div className={`absolute left-0.5 top-0.5 sm:left-1 sm:top-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center z-10 ${
-                darkMode ? 'translate-x-7 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
+                darkMode ? 'translate-x-6 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
               }`}>
                 {darkMode ? (
                   <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-white" viewBox="0 0 20 20">
