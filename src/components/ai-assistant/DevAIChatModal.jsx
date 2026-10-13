@@ -195,7 +195,8 @@ const DevAIChatModal = ({ isOpen, onClose }) => {
   return (
     <div
       id="ai-chat-modal"
-      className="fixed z-50 overflow-hidden flex flex-col bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-300 bottom-20 right-4 left-4 h-[65vh] max-h-[500px] sm:bottom-24 sm:right-6 sm:left-auto sm:w-[380px] sm:h-[520px]"
+      // FIXED: Added `sm:max-h-[calc(100vh-120px)]` to force the chat window to shrink gracefully on short screens (like 1024x600).
+      className="fixed z-50 overflow-hidden flex flex-col bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl animate-in fade-in slide-in-from-bottom-5 duration-300 bottom-20 right-4 left-4 h-[65vh] max-h-[80vh] sm:bottom-24 sm:right-6 sm:left-auto sm:w-[380px] sm:h-[520px] sm:max-h-[calc(100vh-120px)]"
     >
       {/* ==================================================
           HEADER
