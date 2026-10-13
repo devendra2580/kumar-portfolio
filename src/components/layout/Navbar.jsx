@@ -36,40 +36,37 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative overflow-hidden">
+    <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative">
       
-      {/* 
-        Container Width & Gaps: 
-        Reduced padding and gaps on 'lg' to prevent right-side overflow on 13" laptops. 
-      */}
-      <div className="w-full max-w-[95%] mx-auto px-2 sm:px-6 py-4 flex items-center justify-between gap-2 lg:gap-4 xl:gap-8">
+      {/* PERFECT SCALING WRAPPER: Removed gap overrides so justify-between automatically balances left, center, right */}
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         
-        {/* Left Side: Logo Section */}
+        {/* 1. LOGO SECTION */}
         <div 
           onClick={() => handleTabClick('home')} 
-          className="flex items-center space-x-2 sm:space-x-3 cursor-pointer z-50 whitespace-nowrap flex-shrink-0"
+          className="flex items-center space-x-2 cursor-pointer z-50 flex-shrink-0"
         >
           <span className="text-blue-600 dark:text-blue-400 font-bold text-2xl xl:text-3xl tracking-tight">DK</span>
-          {/* Hides full name on 13" laptops to make room for 7 links, shows on large monitors */}
-          <span className="text-gray-900 dark:text-white font-bold text-lg xl:text-xl hidden sm:block lg:hidden xl:block">Devendra Kumar</span>
+          {/* Full Name hides on 1024px to save width, reappears on 1280px+ */}
+          <span className="hidden xl:block text-gray-900 dark:text-white font-bold text-lg xl:text-xl whitespace-nowrap">Devendra Kumar</span>
         </div>
 
-        {/* Middle: Navigation Links (Desktop) */}
-        {/* Removed 'w-full' to stop it from aggressively pushing the right container off-screen */}
-        <div className="hidden lg:flex flex-1 items-center justify-center space-x-2 xl:space-x-6 text-[12px] xl:text-base font-medium text-gray-700 dark:text-gray-300 min-w-0">
+        {/* 2. NAVIGATION LINKS */}
+        <div className="hidden lg:flex items-center justify-center space-x-4 xl:space-x-8 text-[13px] xl:text-[15px] font-semibold text-gray-700 dark:text-gray-300 flex-shrink min-w-0">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center space-x-1 xl:space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
+                className={`flex items-center space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
-                    ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
+                    ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
                     : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 min-w-[14px] min-h-[14px] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* SVG Icons hide on 1024px to prevent horizontal collision, reappear on 1280px+ */}
+                <svg className="hidden xl:block w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
                 <span>{item.label}</span>
@@ -78,25 +75,21 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           })}
         </div>
 
-        {/* Right Actions Container: Forced to shrink-0 so it never disappears */}
-        <div className="flex items-center space-x-2 xl:space-x-4 z-50 flex-shrink-0">
+        {/* 3. RIGHT ACTIONS CONTAINER */}
+        <div className="flex items-center space-x-3 xl:space-x-4 z-50 flex-shrink-0">
           
-          {/* Download Resume Button */}
+          {/* Responsive Resume Button */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden lg:inline-flex items-center space-x-1.5 xl:space-x-2 px-3 xl:px-6 py-2 xl:py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[11px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="group hidden sm:flex items-center justify-center space-x-2 px-4 xl:px-6 py-2 xl:py-2.5 rounded-full border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[12px] xl:text-sm font-bold transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
-            <svg 
-              className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
+            {/* Bounce Icon hides on 1024px */}
+            <svg className="w-4 h-4 animate-bounce hidden xl:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span className="hidden xl:inline">Download Resume</span>
-            <span className="inline xl:hidden">Resume</span>
+            <span className="hidden xl:block">Download Resume</span>
+            <span className="block xl:hidden">Resume</span>
           </a>
 
           {/* Dark Mode Toggle */}
@@ -139,7 +132,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
           {/* Hamburger Menu Toggle (Mobile & Tablet) */}
           <button
-            className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+            className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors focus:outline-none flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -163,7 +156,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 overflow-hidden py-0'
         }`}
       >
-        <div className="flex flex-col space-y-2 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="flex flex-col space-y-2 px-4 sm:px-6 max-w-[1400px] mx-auto">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -187,7 +180,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="flex items-center justify-center space-x-2 px-4 py-3 mt-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors w-full shadow-md active:scale-95"
+            className="flex sm:hidden items-center justify-center space-x-2 px-4 py-3 mt-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold transition-colors w-full shadow-md active:scale-95"
           >
             <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
