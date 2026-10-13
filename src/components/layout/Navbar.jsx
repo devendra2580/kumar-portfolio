@@ -40,8 +40,8 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   return (
     <nav className="w-full bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300 relative">
       
-      {/* Container stays at 95% max-width. Added safe gaps. */}
-      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-3 lg:gap-4 xl:gap-8">
+      {/* Container: Adjusted gaps for perfect scaling on 13-inch laptops */}
+      <div className="w-full max-w-[95%] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-2 lg:gap-4 xl:gap-8">
         
         {/* Logo Section */}
         <div 
@@ -52,21 +52,21 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           <span className="text-gray-900 dark:text-white font-bold text-lg sm:text-xl hidden sm:block">Devendra Kumar</span>
         </div>
 
-        {/* Dynamic View Navigation Links (Desktop) - Adjusted spacing for 13-inch laptops */}
-        <div className="hidden lg:flex items-center lg:space-x-3 xl:space-x-6 text-sm xl:text-base font-medium text-gray-700 dark:text-gray-300 w-full justify-center">
+        {/* Dynamic View Navigation Links (Desktop) - Adjusted responsive spacing */}
+        <div className="hidden lg:flex items-center space-x-1 lg:space-x-2 xl:space-x-6 text-[13px] xl:text-base font-medium text-gray-700 dark:text-gray-300 w-full justify-center">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`flex items-center lg:space-x-1 xl:space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
+                className={`flex items-center space-x-1 xl:space-x-1.5 pb-1 border-b-2 transition-colors cursor-pointer whitespace-nowrap ${
                   isActive
                     ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 font-semibold'
                     : 'border-transparent hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
-                <svg className="w-4 h-4 min-w-[16px] min-h-[16px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 xl:w-4 xl:h-4 min-w-[14px] min-h-[14px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                 </svg>
                 <span>{item.label}</span>
@@ -76,16 +76,16 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         </div>
 
         {/* Right Actions Container */}
-        <div className="flex items-center space-x-3 sm:space-x-4 z-50 flex-shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-4 z-50 flex-shrink-0">
           
-          {/* Download Resume Button with Bouncing Icon (Desktop) */}
+          {/* Download Resume Button with Bouncing Icon (Desktop) - Responsive Padding */}
           <a
             href={resumeFile}
             download="Devendra_Kumar_Resume.pdf"
-            className="group hidden lg:inline-flex items-center space-x-2 lg:px-4 xl:px-6 py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
+            className="group hidden lg:inline-flex items-center space-x-1.5 lg:space-x-2 px-3 lg:px-4 xl:px-6 py-2 xl:py-2.5 rounded-2xl border-2 border-blue-300 dark:border-blue-500/60 bg-blue-50/40 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100/60 dark:hover:bg-blue-900/40 text-[13px] xl:text-sm font-bold transition-all duration-300 cursor-pointer shadow-xs hover:scale-105 active:scale-95 whitespace-nowrap"
           >
             <svg 
-              className="w-4 h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
+              className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-600 dark:text-blue-400 animate-bounce" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -105,28 +105,28 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             <div className={`absolute -inset-1 rounded-full blur-sm transition-opacity duration-300 ${
               darkMode ? 'bg-blue-500/30 opacity-70 group-hover:opacity-100' : 'bg-amber-400/30 opacity-70 group-hover:opacity-100'
             }`}></div>
-            <div className={`relative w-14 sm:w-16 h-7 sm:h-8 rounded-full p-1 border transition-colors duration-300 flex items-center justify-between shadow-inner ${
+            <div className={`relative w-12 sm:w-16 h-6 sm:h-8 rounded-full p-1 border transition-colors duration-300 flex items-center justify-between shadow-inner ${
               darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-800 border-slate-700'
             }`}>
-              <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-amber-400 z-0">
-                <svg className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-75 opacity-50' : 'scale-100 opacity-100 animate-spin-cw'}`} fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center text-amber-400 z-0">
+                <svg className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-75 opacity-50' : 'scale-100 opacity-100 animate-spin-cw'}`} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clipRule="evenodd" />
                 </svg>
               </div>
-              <div className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-cyan-300 z-0">
-                <svg className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-100 opacity-100' : 'scale-75 opacity-50'}`} fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-4 h-4 sm:w-6 sm:h-6 flex items-center justify-center text-cyan-300 z-0">
+                <svg className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 ${darkMode ? 'scale-100 opacity-100' : 'scale-75 opacity-50'}`} fill="currentColor" viewBox="0 0 20 20">
                   <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                 </svg>
               </div>
-              <div className={`absolute left-0.5 top-0.5 sm:left-1 sm:top-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center z-10 ${
-                darkMode ? 'translate-x-7 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
+              <div className={`absolute left-0.5 top-0.5 sm:left-1 sm:top-1 w-4 h-4 sm:w-6 sm:h-6 rounded-full shadow-lg transform transition-transform duration-300 ease-in-out flex items-center justify-center z-10 ${
+                darkMode ? 'translate-x-6 sm:translate-x-8 bg-blue-600 text-white' : 'translate-x-0 bg-white text-amber-500'
               }`}>
                 {darkMode ? (
-                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-white" viewBox="0 0 20 20">
+                  <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current text-white" viewBox="0 0 20 20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
                   </svg>
                 ) : (
-                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current text-amber-500" viewBox="0 0 20 20">
+                  <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current text-amber-500" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" clipRule="evenodd" />
                   </svg>
                 )}
